@@ -5,9 +5,9 @@ Class Demo.coffeemaker Extends (%Persistent, %Populate, %XML.Adaptor) [ Owner = 
 
 Property CoffeemakerID As %Integer [ Calculated, SqlComputeCode = {Set {*} = {ID} }, SqlComputed ];
 
-Property Name As %String;
+Property Name As %String [ Required ];
 
-Property Brand As %String;
+Property Brand As %String [ Required ];
 
 Property Color As %String;
 
