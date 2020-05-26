@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+      - '**/*.md'
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Build Docker image
+      run: docker build -t coffeemaker:${GITHUB_SHA} .
+    - name: Tests
+      run: |
+          docker run --rm -i \
+            -w /opt/coffee \
+            -v `pwd`/tests:/opt/coffee/tests \
+            -v `pwd`/.ci/tests_entrypoint.sh:/tests_entrypoint.sh \
+            --entrypoint /tests_entrypoint.sh \
+            coffeemaker:${GITHUB_SHA}
+        
