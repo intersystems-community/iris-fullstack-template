@@ -4,7 +4,8 @@ services:
     build: 
       context: .
     ports: 
-      - 52773-52783:52773
+      - 52775:52773
     volumes:
       - ./web:/opt/coffee/csp
       - ./tests:/opt/coffee/tests
+      - ./:/irisdev/app

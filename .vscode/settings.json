@@ -1,6 +1,7 @@
 {
   "objectscript.conn": {
-    "active": true,
+    "username": "_SYSTEM",
+    "password": "SYS",
     "ns": "COFFEE",
     "docker-compose": {
       "service": "iris",
