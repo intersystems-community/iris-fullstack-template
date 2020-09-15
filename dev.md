@@ -16,28 +16,16 @@ docker-compose up -d
 
 ## open terminal to docker
 ```
-docker-compose exec iris iris session iris -U FHIRServer
+docker-compose exec iris iris session iris -U COFFEE
 ```
-
-## FHIR Namespace setup
-
-do ##class(HS.HC.Util.Installer).InstallFoundation("FHIRServer")
-
-## fhir server configuration setup
+## debug CSP
 ```
-do ##class(HS.FHIRServer.ConsoleSetup).Setup()
-```
-
-## load fhir resources
-```
-zw ##class(HS.FHIRServer.Tools.DataLoader).SubmitResourceFiles("/opt/irisapp/fhir/", "FHIRServer", "/fhir/r4")
-
 kill ^%ISCLOG
 
 kill ^ISCLOG
 
 set ^%ISCLOG=3
-
+```
 
 ## select zpm test registry
 ```
