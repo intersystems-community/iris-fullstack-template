@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="demo-coffee-maker.ZPM">
+  <Document name="demo-coffeemaker.ZPM">
     <Module>
-      <Name>demo-coffee-maker</Name>
+      <Name>demo-coffeemaker</Name>
       <Version>1.0.1</Version>
       <Description>InterSystems IRIS Full-stack app demo</Description>
       <Keywords>REST,Full-stack,angular</Keywords>
