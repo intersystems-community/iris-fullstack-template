@@ -39,7 +39,7 @@ or open the terminal and run:
 docker-compose up -d
 ```
 Check if the app is running from the VSCode ObjectScript menu:
-![template-app](https://user-images.githubusercontent.com/2781759/93434786-418f8700-f8d1-11ea-98fa-9473c412cae9.gif)
+![template-app1](https://user-images.githubusercontent.com/2781759/93438148-946b3d80-f8d5-11ea-8373-71383bf6395b.gif)
 
 All set. You good to start the development.
 
