@@ -13,6 +13,7 @@ WORKDIR /opt/coffee
 RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} .
 
 COPY irissession.sh /
+RUN chmod +x /irissession.sh 
 
 USER ${ISC_PACKAGE_MGRUSER}
 
