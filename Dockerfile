@@ -6,28 +6,19 @@ ARG IMAGE=intersystemsdc/iris-community:2020.3.0.200.0-zpm
 ARG IMAGE=intersystemsdc/iris-community
 FROM $IMAGE
 
+WORKDIR /home/irisowner/irisbuild
 
 USER root
-
-WORKDIR /opt/coffee
-
-RUN chown ${ISC_PACKAGE_MGRUSER}:${ISC_PACKAGE_IRISGROUP} .
-
-COPY irissession.sh /
-RUN chmod +x /irissession.sh 
+RUN apt update && apt-get -y install git
 
 USER ${ISC_PACKAGE_MGRUSER}
 
-COPY Installer.cls .
+ARG TESTS=0
+ARG MODULE="demo-coffeemaker"
+ARG NAMESPACE="COFFEE"
 
-COPY src src
-COPY web csp
-
-SHELL ["/irissession.sh"]
-
-RUN \
-  do $SYSTEM.OBJ.Load("Installer.cls", "ck") \
-  set sc = ##class(App.Installer).setup() \
-  set ^|"COFFEE"|UnitTestRoot = "/opt/coffee/tests"
-
-SHELL ["/bin/sh", "-c"]
+RUN --mount=type=bind,src=.,dst=. \
+    iris start IRIS && \
+	iris session IRIS < iris.script && \
+    ([ $TESTS -eq 0 ] || iris session iris -U $NAMESPACE "##class(%ZPM.PackageManager).Shell(\"test $MODULE -v -only\",1,1)") && \
+    iris stop IRIS quietly

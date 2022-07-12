@@ -9,6 +9,7 @@
     },
     "links": {
       "CoffeeMaker": "http://localhost:${port}/csp/coffee/index.html"
-    }
+    },
+    "active": true
   }
 }
