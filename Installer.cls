@@ -1,5 +1,5 @@
 /// an example of Installer class just to create a new clear namespace and database IRISAPP
-Class Installer
+Class App.Installer
 {
 
 XData setup
