@@ -2,7 +2,7 @@
  [![Quality Gate Status](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fullstack-template&metric=alert_status)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2Firis-fullstack-template)
  [![Reliability Rating](https://community.objectscriptquality.com/api/project_badges/measure?project=intersystems_iris_community%2Firis-fullstack-template&metric=reliability_rating)](https://community.objectscriptquality.com/dashboard?id=intersystems_iris_community%2Firis-fullstack-template)
 # InterSystems IRIS Full Stack demo and template
-This repository contains a sample application which consists of InterSystems IRIS REST API and Frontend Application which demoes a coffee-maker shop. 
+This repository contains a sample application which consists of InterSystems IRIS REST API and Frontend Application which demoes a coffee-maker shop.
 
 It demonstrates the way to communicate with InterSystes IRIS from any frontend application.
 It has Unit tests which could be run interactively, or using ZPM, or via Github CI.
@@ -15,14 +15,14 @@ Clone the repo, run:
 ```
 docker-compose up -d
 ```
-RUn the application with URL: http://localhost:52775/csp/coffee/index.html#/
+RUn the application with URL: http://localhost:52773/csp/coffee/index.html#/
 ### ZPM way
 Open IRIS terminal and run ZPM:
 ```
 USER>zpm
 zpm:USER>install "demo-coffeemaker"
 ```
-Run the appliction in URL: http://yourserver:52775/csp/coffee/index.html#/
+Run the appliction in URL: http://yourserver:52773/csp/coffee/index.html#/
 
 ## Development
 ### Prerequisites
@@ -70,4 +70,3 @@ Feel free to use as an example and change the module.xml to package your own Int
 
 ## Credits
 Demo is built using original [Coffee Maker application](https://github.com/intersystems/FirstLook-REST) by Michael Smart a and it's enhanced version by [Caret Dev](https://github.com/caretdev/CoffeeMaker).
-
