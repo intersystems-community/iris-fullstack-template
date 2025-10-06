@@ -1,4 +1,8 @@
-{
+{ "files.associations": {
+
+        "Dockerfile*": "dockerfile",
+        "iris.script": "objectscript"
+      },
   "objectscript.conn": {
     "username": "_SYSTEM",
     "password": "SYS",
